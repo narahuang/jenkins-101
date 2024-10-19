@@ -3,7 +3,7 @@ pipeline {
         node {
             label 'docker-agent-python'
             }
-      }
+    }
     triggers {
         pollSCM 'H/5 * * * *'
     }
@@ -48,6 +48,11 @@ pipeline {
                 echo "doing delivery stuff.."
                 '''
             }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'myapp/log.html, myapp/report.html', allowEmptyArchive: true
         }
     }
 }
