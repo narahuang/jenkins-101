@@ -17,7 +17,7 @@ pipeline {
                 '''
             }
         }
-        stage('Test') {
+        stage('Test-unittest') {
             steps {
                 echo "Testing with unittest.."
                 sh '''
@@ -27,6 +27,8 @@ pipeline {
                 python3 -m unittest test_hello.py
                 '''
             }
+        }
+        stage('Test-Robot') {
             steps {
                 echo "Testing with Robot Framework..."
                 sh '''
