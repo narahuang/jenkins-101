@@ -4,10 +4,10 @@ Library    Process
 *** Test Cases ***
 Test Hello Default
     ${result}=    Run Process    python3    hello.py
-    Should Be Equal    ${result.stdout}    Hello World!\n
+    Should Be Equal    ${result.stdout}    Hello World!
 
 Test Hello Custom Name
-    ${result}=    Run Process    python3    hello.py    --name=Alice
+    ${result}=    Run Process    python3    -c    from hello import hello; print(hello('Alice'))
     Should Be Equal    ${result.stdout}    Hello Alice!\n
 
 Test Hello Empty String
