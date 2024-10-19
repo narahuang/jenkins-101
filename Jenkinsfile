@@ -27,6 +27,13 @@ pipeline {
                 python3 -m unittest test_hello.py
                 '''
             }
+            steps {
+                echo "Testing with Robot Framework..."
+                sh '''
+                cd myapp
+                robot test_hello.robot
+                '''
+            }
         }
         stage('Deliver') {
             steps {
