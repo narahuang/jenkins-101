@@ -8,8 +8,8 @@ Test Hello Default
 
 Test Hello Custom Name
     ${result}=    Run Process    python3    -c    from hello import hello; print(hello('Alice'))
-    Should Be Equal    ${result.stdout}    Hello Alice!\n
+    Should Be Equal    ${result.stdout}    Hello Alice!
 
 Test Hello Empty String
     ${result}=    Run Process    python3    -c    from hello import hello; print(hello(''))
-    Should Be Equal    ${result.stdout}    Hello !\n
+    Should Be Equal    ${result.stdout}    Hello !
