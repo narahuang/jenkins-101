@@ -33,7 +33,7 @@ pipeline {
                 echo "Testing with Robot Framework..."
                 sh '''
                 cd myapp
-                robot test_hello.robot
+                python3 -m robot test_hello.robot
                 '''
             }
         }
