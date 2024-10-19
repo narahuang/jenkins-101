@@ -19,11 +19,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Testing.."
+                echo "Testing with unittest.."
                 sh '''
                 cd myapp
                 python3 hello.py
                 python3 hello.py --name=Brad
+                python3 -m unittest test_hello.py
                 '''
             }
         }
